@@ -38,17 +38,62 @@ public class Main {
         List<String> arguments = Context.getArgList();
 
         if (arguments.isEmpty()) {
-            System.out.println("Use one of the following argument:");
-            System.out.println("\tinterpolationTest");
+            System.out.println(invalidArguments());
             return;
         }
-            
+
         switch (arguments.get(0)) {
             case "interpolationTest":
                 test_interpolation_random_data();
                 break;
+            case "lattice_gen":
+                display_random_lattices();
+                break;
+            case "help":
+                System.out.println(invalidArguments());
+                System.out.println(options());
+                break;
+            default:
+                System.out.println(invalidArguments());
         }
+    }
 
+    private static String invalidArguments() {
+        return "Use one of the following argument:\n"
+                + "\thelp\n"
+                + "\tinterpolation_test\n"
+                + "\tlattice_gen\n";
+                
+    }
+
+    private static String options() {
+        return "Options:\n"
+                + "\t-n arities, default: 1, 2, 3, 4, 5, 6, 10, 15, 20, 30\n"
+                + "\t-m number of instances in the data, default: 10, 100, 1000, 10000, 50000\n"
+                + "\t-k height of the lattice, default: 1, 2, 3, 5, 7, 10, 15, 20, 30\n"
+                + "\t-p rho parameter for lattice generation, default: 0.6\n"
+                + "\t-g maximal number of focal set of the lattice polynomial, default: 100\n"
+                + "\t-nbrep, default: 1\n"
+                + "\t In order to specify the value of an option,"
+                + "write \"-optionName value1\" if the option requires only one value,"
+                + "\"-optionName value1,value2,...,valueN\" if the option requires a list of values.\n";
+    }
+
+    public static void display_random_lattices() {
+        List<Integer> dims = Context.getIntegerListOption("-k", Arrays.asList(new Integer[]{5}));
+        List<Double> probs = Context.getDoubleListOption("-p", Arrays.asList(new Double[]{0.6}));
+
+        for (Integer k : dims) {
+            for (Double rho : probs) {
+                DistributiveLatticeArrayImpl L
+                        = new DistributiveLatticeArrayImpl(
+                                new DistributiveLatticeBinaryImpl(OTools.randomJoinIrreducibleElements(k, rho)
+                                )
+                        );
+                FastDrawer.drawLattice(L.getFloors(), 400, 400);
+            }
+        }
+        //FastDrawer.drawLattice(L.getFloors(), 400);
     }
 
     /**

@@ -23,16 +23,25 @@ public class JCanvas extends JPanel {
         this.struct = s;
     }
     
+    @Override
     public void paint(Graphics g) {
-        /*super.paint(g);
+        super.paint(g);
         int squaresize = 5;
         if (struct.size() > 20) {
             squaresize = 0;
         }
         for (int i = 0; i < struct.size(); i++) {
             for (BoxBTuple<Couple<Double>> bt : struct.get(i)) {
-                g.drawRect((bt.getContent().getLeft() - squaresize / 2), bt.getContent().getRight() - squaresize / 2, squaresize, squaresize);
-                g.fillRect((bt.getContent().getLeft() - squaresize / 2), bt.getContent().getRight() - squaresize / 2, squaresize, squaresize);
+                g.drawRect(
+                        (int)(bt.getContent().getLeft() - (squaresize / 2)),
+                        (int)(bt.getContent().getRight() - squaresize / 2),
+                        squaresize,
+                        squaresize);
+                g.fillRect(
+                        (int)(bt.getContent().getLeft() - squaresize / 2),
+                        (int)(bt.getContent().getRight() - squaresize / 2),
+                        squaresize,
+                        squaresize);
                 //g.drawString(bt.toString(), bt.getContent().getLeft(), bt.getContent().getRight());
 
                 if (i < struct.size() - 1) {
@@ -51,6 +60,6 @@ public class JCanvas extends JPanel {
                 }
             }
 
-        }*/
+        }
     }
 }
