@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import javax.swing.JFrame;
 import miscellaneous.Couple;
 import orders.impls.BTupleImpl;
 import orders.impls.BoxBTuple;
@@ -28,7 +29,12 @@ public class FastDrawer {
         JCanvas jc = new JCanvas(latticeGraphicalStructure(floors, height, width));
         jc.setBackground(WHITE);
         jc.setPreferredSize(new Dimension(max(400, height), height));
-        showOnFrame(jc, "test");
+        //showOnFrame(jc, "test");
+        
+        JFrame frame = new JFrame();
+        frame.add(jc);
+        frame.setSize(new Dimension(max(400, height), height));
+        frame.setVisible(true);
 
     }
 

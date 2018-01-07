@@ -57,6 +57,7 @@ public class Context {
         while (++i < args.length && args[i].charAt(0) != '-') {
             getInstance().argList.add(args[i]);
         }
+        i--;
         while (++i < args.length) {
             if (args[i].charAt(0) == '-') {
                 if (args[i].length() < 2) {
