@@ -2,7 +2,7 @@
 
 ## What is it
 
-This program is a java implementation of algorithm presented in the paper "Interpolation by lattice polynomial functions: a polynomial time algorithm" by Quentin Brabant, Miguel Couceiro and José Figueira (submitted for publication). It implements distributive lattices, lattice polynomial functions, and processes related to it.
+This program is a java implementation of algorithms presented in the paper *Interpolation by lattice polynomial functions: a polynomial time algorithm* by Quentin Brabant, Miguel Couceiro and José Figueira (submitted for publication). It implements distributive lattices, lattice polynomial functions, and processes related to it.
 
 ## The jar file
 
@@ -14,7 +14,7 @@ java -jar latticepolynomials.jar [task] [options]
 ### Tasks
 The task to execute is specified by the first argument:
 * ``help``: displays arguments and  option names
-* ``interpolation_test``: randomly generates a distributive lattice, a lattice polynomial, and data. From the data, computes the constraints for interpolating lattice polynomials, and display the time spent on this last task. For more details, see "Interpolation by lattice polynomial functions: a polynomial time algorithm". Note that this task is executed for each combination of the options ``-n``, ``-m``, ``-k``, ``-p``, ``-g``, ``-nbrep``.
+* ``interpolation_test``: randomly generates a distributive lattice, a lattice polynomial, and data. From the data, computes the constraints for interpolating lattice polynomials, and display the time spent on this last task. For more details, see *Interpolation by lattice polynomial functions: a polynomial time algorithm*. Note that this task is executed for each combination of the options ``-n``, ``-m``, ``-k``, ``-p``, ``-g``, ``-nbrep``.
 * ``lattice_gen``: Generates random distributive lattices and displays them. One lattice is generated for each combination of the options ``-k``,``-p``.
 
 ### Options
