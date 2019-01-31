@@ -2,7 +2,7 @@
 
 ## What is it
 
-This program is a java implementation of algorithms presented in the paper *Interpolation by lattice polynomial functions: a polynomial time algorithm* by Quentin Brabant, Miguel Couceiro and José Figueira (submitted for publication). It implements distributive lattices, lattice polynomial functions, and processes related to it.
+This program is a java implementation of algorithms presented in the paper [Interpolation by lattice polynomial functions: a polynomial time algorithm](https://www.sciencedirect.com/science/article/pii/S016501141831025X), written by myself, Miguel Couceiro and José R. Figueira. It implements distributive lattices, lattice polynomial functions, and the interpolation algorithm presented in the paper. I mainly share these implementations for the sake of transparency ; however, feel free to contact me if you think this code can be of any use to you.
 
 ## The jar file
 
